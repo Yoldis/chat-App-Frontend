@@ -6,14 +6,12 @@ import { Perfil, Buscar, AlertModal } from './index';
 import { SocketController } from '../../socket/SocketController';
 
 
-
-
 export const SideBarChat = () => {
     const{iconLeftValue, startOnChangeValueIconLeft} = UiStore();
     const{ fotoTemp, fotoDefault, isLoadingFoto, startCancelFotoTemp, quitarFoto, foto, nombre, descripcion, startLogoutAuth} = AuthStore();
     const{form, onChangeInput, onResetForm, onChangeInputFile} = useForm({foto, descripcion, nombre, archivo:''});
 
-    const{startSearchAmigo, startLogoutChat} = ChatStore();
+    const{startSearchAmigo, startLogoutChat, chatActivo} = ChatStore();
 
     const onCancelModal = () => {
       if(fotoDefault !== fotoTemp) startCancelFotoTemp(fotoTemp);
@@ -32,7 +30,7 @@ export const SideBarChat = () => {
   return (
     <article
       className={`select-none absolute pt-2 ${
-        iconLeftValue ? "left-[-345px]" : "left-[0px]"
+        iconLeftValue && chatActivo ? "left-[-345px]" : 'md:left-[0px]'
       }  transition-all duration-100 ease-linear w-[345px] text-neutral-200 z-10 bg-neutral h-[calc(100vh-60px)] border-r border-black`}
     >
       <div
@@ -94,7 +92,7 @@ export const SideBarChat = () => {
       <div className="mx-1 mt-4 overflow-auto">
         <Chats/>
       </div>
-
+      
       <div
         onClick={startOnChangeValueIconLeft}
         className="absolute top-[350px] right-[-20px] bg-sky-800 p-1.5 rounded-full cursor-pointer "

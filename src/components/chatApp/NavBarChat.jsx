@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { BsFillChatDotsFill } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
@@ -22,14 +22,14 @@ export const NavBarChat = () => {
   return (
     <nav className="py-2 text-neutral-200 px-4 flex gap-8 items-center justify-between select-none border-b border-b-sky-800">
      
-      <div className="flex gap-2 items-center flex-wrap">
+      <Link to="/chat/" className="flex gap-2 items-center flex-wrap ">
         <img
           src={logoApp}
           className="h-10 w-10"
           alt=""
         />
         <h1 className="font-bold text-xl">Chat App</h1>
-      </div>
+      </Link>
 
       <div>
         <ul className="flex items-center flex-wrap gap-3 font-medium">

@@ -47,6 +47,7 @@ export const Chat = () => {
       startEscribiendo(userId, chatActivo.id);
     }, [mensaje]);
 
+    
   return (
     <div
       className={`absolute ${
