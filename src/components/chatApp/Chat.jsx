@@ -51,7 +51,7 @@ export const Chat = () => {
   return (
     <div
       className={`absolute ${
-        iconLeftValue
+        iconLeftValue && chatActivo
           ? "left-0 w-full"
           : "md:left-[345px] md:w-[calc(100%-345px)]"
       } `}

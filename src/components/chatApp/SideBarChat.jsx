@@ -30,7 +30,7 @@ export const SideBarChat = () => {
   return (
     <article
       className={`select-none absolute pt-2 ${
-        iconLeftValue && chatActivo ? "left-[-345px]" : 'md:left-[0px]'
+        iconLeftValue && chatActivo ? "left-[-345px]"  : 'left-[0px]'
       }  transition-all duration-100 ease-linear w-[345px] text-neutral-200 z-10 bg-neutral h-[calc(100vh-60px)] border-r border-black`}
     >
       <div
@@ -97,7 +97,7 @@ export const SideBarChat = () => {
         onClick={startOnChangeValueIconLeft}
         className="absolute top-[350px] right-[-20px] bg-sky-800 p-1.5 rounded-full cursor-pointer "
       >
-        {iconLeftValue ? (
+        {iconLeftValue && chatActivo ? (
           <BiChevronsRight className="text-xl" />
         ) : (
           <BiChevronsLeft className="text-xl " />
