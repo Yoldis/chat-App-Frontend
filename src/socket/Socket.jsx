@@ -2,8 +2,8 @@
 import io from 'socket.io-client';
 
 const Socket = (userId) => {
-  // https://chat-app-backend-production-df83.up.railway.app/ 
-  const socket = io("http://localhost:8082", {
+  // http://localhost:8082
+  const socket = io("https://chat-app-backend-production-df83.up.railway.app/", {
     extraHeaders: {
       id: userId,
     },
